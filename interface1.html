@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Gradient Navigation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for the gradient effects */
+        .nav-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 50%, #1e40af 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-gradient-scrolled {
+            background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 50%, #3b82f6 100%);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        /* Animation for the logo */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .logo-pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-100">
+    <!-- Navigation -->
+    <nav id="mainNav" class="nav-gradient fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white logo-pulse">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <span class="text-white font-bold text-xl">BlueGradient</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                        <a href="#" class="nav-link text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition duration-300">Home</a>
+                        <a href="#" class="nav-link text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition duration-300">Features</a>
+                        <a href="#" class="nav-link text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition duration-300">Pricing</a>
+                        <a href="#" class="nav-link text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition duration-300">About</a>
+                        <a href="#" class="nav-link text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition duration-300">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-white hover:text-gray-300 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu md:hidden fixed inset-y-0 right-0 w-64 bg-blue-900 z-50">
+            <div class="flex flex-col h-full">
+                <div class="flex justify-end p-4">
+                    <button id="closeMobileMenu" class="text-white hover:text-gray-300 focus:outline-none">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div class="flex-grow flex flex-col items-center justify-center space-y-8">
+                    <a href="#" class="nav-link text-white text-xl font-medium">Home</a>
+                    <a href="#" class="nav-link text-white text-xl font-medium">Features</a>
+                    <a href="#" class="nav-link text-white text-xl font-medium">Pricing</a>
+                    <a href="#" class="nav-link text-white text-xl font-medium">About</a>
+                    <a href="#" class="nav-link text-white text-xl font-medium">Contact</a>
+                </div>
+                <div class="p-6 text-center text-blue-200 text-sm">
+                    © 2023 BlueGradient
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <div class="pt-32 pb-20 bg-gradient-to-b from-blue-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-blue-900 mb-6">Blue Gradient Experience</h1>
+            <p class="text-xl text-blue-800 max-w-3xl mx-auto mb-10">Discover the power of our gradient navigation that adapts to your scrolling and interactions.</p>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                Get Started
+            </button>
+        </div>
+    </div>
+    
+    <!-- Content Sections -->
+    <div class="space-y-32 py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section 1 -->
+        <section class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-bold text-blue-900 mb-6">Interactive Navigation</h2>
+                <p class="text-blue-800 mb-6">Our navigation bar changes its gradient when you scroll down the page, creating a dynamic visual effect that enhances user experience.</p>
+                <ul class="space-y-3 text-blue-800">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                        <span>Smooth gradient transition on scroll</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                        <span>Animated underline effect on hover</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                        <span>Fully responsive design</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-blue-100 rounded-xl p-8 shadow-lg">
+                <div class="bg-white rounded-lg p-6 shadow-inner">
+                    <div class="h-12 bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg mb-4"></div>
+                    <div class="space-y-4">
+                        <div class="h-4 bg-blue-200 rounded w-3/4"></div>
+                        <div class="h-4 bg-blue-200 rounded w-5/6"></div>
+                        <div class="h-4 bg-blue-200 rounded w-2/3"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 2 -->
+        <section class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-1 md:order-2">
+                <h2 class="text-3xl font-bold text-blue-900 mb-6">Mobile Friendly</h2>
+                <p class="text-blue-800 mb-6">The navigation automatically adapts to smaller screens with a sleek mobile menu that slides in from the right.</p>
+                <div class="bg-blue-600 text-white px-4 py-2 rounded-lg inline-block">
+                    <span>Try resizing your browser!</span>
+                </div>
+            </div>
+            <div class="order-2 md:order-1">
+                <div class="relative max-w-xs mx-auto">
+                    <div class="bg-blue-900 rounded-3xl p-2 shadow-xl">
+                        <div class="bg-blue-800 rounded-2xl p-4">
+                            <div class="flex justify-between items-center mb-6">
+                                <div class="text-white font-bold">Menu</div>
+                                <button class="text-white">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="h-10 bg-blue-700 rounded-lg flex items-center px-4 text-white">Home</div>
+                                <div class="h-10 bg-blue-600 rounded-lg flex items-center px-4 text-white">Features</div>
+                                <div class="h-10 bg-blue-600 rounded-lg flex items-center px-4 text-white">Pricing</div>
+                                <div class="h-10 bg-blue-600 rounded-lg flex items-center px-4 text-white">About</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-blue-500 rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+                        <i class="fas fa-mobile-alt text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">BlueGradient</h3>
+                    <p class="text-blue-200">Creating beautiful, interactive navigation experiences with smooth gradients and animations.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Features</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Pricing</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Documentation</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Tutorials</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-200 hover:text-white transition text-xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white transition text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white transition text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white transition text-xl"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-blue-300">
+                <p>© 2023 BlueGradient. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+        });
+        
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('mainNav');
+        let lastScrollTop = 0;
+        
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 50) {
+                navbar.classList.add('nav-gradient-scrolled');
+                
+                // Add subtle scaling effect when scrolling down
+                if (scrollTop > lastScrollTop) {
+                    navbar.style.transform = 'scale(0.98)';
+                } else {
+                    navbar.style.transform = 'scale(1)';
+                }
+            } else {
+                navbar.classList.remove('nav-gradient-scrolled');
+                navbar.style.transform = 'scale(1)';
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        }, false);
+        
+        // Add active class to current page link
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Remove active class from all links
+                navLinks.forEach(l => l.classList.remove('bg-blue-700'));
+                
+                // Add active class to clicked link
+                this.classList.add('bg-blue-700');
+            });
+        });
+        
+        // Add hover effect to buttons
+        const buttons = document.querySelectorAll('button');
+        
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
