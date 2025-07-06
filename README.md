@@ -18,7 +18,7 @@ Interactive Navigation Menu | Task 1 - Prodigy InfoTech Web Dev Internship Fixed
 - JavaScript (for scroll and hover interactivity)
 
 ## 📸 Screenshot
-![screenshot](screenshot.png)
+![screenshot](Screenshot_png.png)
 
 ## 🔗 Connect With Me
 [LinkedIn Profile](https://www.linkedin.com/in/chandan-mili-03614b292/)
