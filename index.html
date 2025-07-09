@@ -1,0 +1,74 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Gradient Navigation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans bg-gray-100">
+    <!-- Navigation -->
+    <nav id="mainNav" class="nav-gradient fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white logo-pulse">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <span class="text-white font-bold text-xl">BlueGradient</span>
+                    </div>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                        <a href="#" class="nav-link text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition duration-300">Home</a>
+                        <a href="#" class="nav-link text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition duration-300">Features</a>
+                        <a href="#" class="nav-link text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition duration-300">Pricing</a>
+                        <a href="#" class="nav-link text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition duration-300">About</a>
+                        <a href="#" class="nav-link text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition duration-300">Contact</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-white hover:text-gray-300 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu md:hidden fixed inset-y-0 right-0 w-64 bg-blue-900 z-50">
+            <div class="flex flex-col h-full">
+                <div class="flex justify-end p-4">
+                    <button id="closeMobileMenu" class="text-white hover:text-gray-300 focus:outline-none">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div class="flex-grow flex flex-col items-center justify-center space-y-8">
+                    <a href="#" class="nav-link text-white text-xl font-medium">Home</a>
+                    <a href="#" class="nav-link text-white text-xl font-medium">Features</a>
+                    <a href="#" class="nav-link text-white text-xl font-medium">Pricing</a>
+                    <a href="#" class="nav-link text-white text-xl font-medium">About</a>
+                    <a href="#" class="nav-link text-white text-xl font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <div class="pt-32 pb-20 bg-gradient-to-b from-blue-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-blue-900 mb-6">Blue Gradient Experience</h1>
+            <p class="text-xl text-blue-800 max-w-3xl mx-auto mb-10">Discover the power of our gradient navigation that adapts to your scrolling and interactions.</p>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                Get Started
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
